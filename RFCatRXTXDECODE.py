@@ -1,3 +1,12 @@
+"""
+By Chris (trishmapow), 2017 purely for research purposes and for fun.
+Code is probably dodgy and inefficient.
+Use at your own risk.
+
+Also, I don't know how to increase preamble length >255 and actually have it send proper hex data without weird gaps.
+Should've got a HackRF, I know.
+"""
+
 from rflib import *
 import sys
 import bitstring
