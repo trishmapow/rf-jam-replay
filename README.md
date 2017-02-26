@@ -1,4 +1,6 @@
 # CC1101-FSK
+**NOTE:** I am not uploading the final code 1) because it's actually functional and 2) because I'm pretty sure you can't do this for a live system still in use. Also, there is no jamming code here. If you read into it, you can try it yourself, that's what I did.
+
 Attempt at RollJam, jam and replay keyless entry systems.
 
 Ended up using GNURadio to record IQ data from an RTL-SDR then decoded it with a custom protocol made on wave-converter (another Github library) and then parsed the output to return the hex value of the transmission. 
