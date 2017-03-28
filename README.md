@@ -3,7 +3,7 @@
 
 **DISCLAIMER:** I am not a lawyer, use at your own risk, don't break into other people's things, don't blame me for what happens.
 
-Attempt at RollJam, jam and replay keyless entry systems.
+Attempt at RollJam, jam and replay keyless entry systems. Thank you to [Samy Kamkar](http://samy.pl/), [Github](https://github.com/samyk), who first provided me with the inspiration to perform software defined radio research, check out his more polished RollJam device [here](https://www.wired.com/2015/08/hackers-tiny-device-unlocks-cars-opens-garages/) (also for helping me out with some technical questions on Reddit). 
 
 Ended up using GNURadio to record IQ data from an RTL-SDR then decoded it with a custom protocol made on wave-converter (another Github library) and then parsed the output to return the hex value of the transmission. 
 
