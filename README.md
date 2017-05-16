@@ -1,9 +1,7 @@
 # CC1101-FSK
-**NOTE:** I am not uploading the final code 1) because it's actually functional and 2) because I'm pretty sure you can't do this for a live system still in use. Also, there is no jamming code here. If you read into it, you can try it yourself, that's what I did.
+**NOTE:** I am not uploading the final code because it's actually functional and thus I'm probably not allowed to release a vulnerability like this (even if it is well known). Also, there is no jamming code here. 
 
-**DISCLAIMER:** I am not a lawyer, use at your own risk, don't break into other people's things, don't blame me for what happens.
-
-Attempt at RollJam, jam and replay keyless entry systems. Thank you to [Samy Kamkar](http://samy.pl/), [Github](https://github.com/samyk), who first provided me with the inspiration to perform software defined radio research, check out his more polished RollJam device [here](https://www.wired.com/2015/08/hackers-tiny-device-unlocks-cars-opens-garages/) (also for helping me out with some technical questions on Reddit). 
+Attempt at RollJam, jam and replay keyless entry systems. Thank you to [Samy Kamkar](http://samy.pl/), [Github](https://github.com/samyk), who first provided me with the inspiration to perform software defined radio research, check out his more polished RollJam device [here](https://www.wired.com/2015/08/hackers-tiny-device-unlocks-cars-opens-garages/) (also for helping me out with some technical questions). 
 
 Ended up using GNURadio to record IQ data from an RTL-SDR then decoded it with a custom protocol made on wave-converter (another Github library) and then parsed the output to return the hex value of the transmission. 
 
