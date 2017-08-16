@@ -13,6 +13,11 @@ Refer to https://github.com/paulgclark/waveconverter and [GNURadio](http://gnura
 
 Further documentation will be uploaded in a few months time, including a paper on implications and recommendations for manufacturers, end-users and third parties.
 
+### Jamming
+Attach an antenna to pin 12 of the GPIO header.
+Note that output is unfiltered and creates nasty harmonics, so it may not be legal.
+`sudo ./rpitx -m VFO -f [FREQ IN HZ]`
+
 ## Screenshots
 **Inspectrum view of the IQ taken from GNURadio**
 ![Screenshot 1](https://github.com/trishmapow/CC1101-FSK/blob/master/Inspectrum_CORRECT2MHz_Initial.png "Inspectrum")
