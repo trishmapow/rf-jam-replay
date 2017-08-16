@@ -1,1 +1,2 @@
-Simpliciti_HTMLALL_Registers.html
+* linguist-vendored
+*.py linguist-vendored=false
