@@ -22,22 +22,22 @@ FTDI (one-time use for programming)	|$5 (eBay)
 
 **Following is an extract of the paper written. It is aimed as a basic overview for those getting started in RF and does not go into much detail. If any RF experts spot errors, please let me know!**
 
-## Background of Keyless Entry Systems
+## Background of Keyless Entry Systems
 
 A remote keyless entry system simply refers to any electronic lock that functions without the use of a mechanical key. Commonly, this comes in the form of a key fob, with buttons that communicate using radio frequency (RF) signals with a receiver to perform a certain action, such as locking or unlocking a vehicle.
 
-### Types of Remote Keyless Entry
+### Types of Remote Keyless Entry
 Keyless entry systems can be categorised into three broad types, as seen below.
 
 ![Imgur](https://i.imgur.com/gDRgPUB.png)
 
 *Figure 1: One-way, two-way & passive RKE illustration*
 
-1. A one-way RKE requires a manual button press to perform an action. The vehicle receives the signal and confirms that it is a valid code, then performs the required action. With a rolling code system, a cryptographically secure pseudorandom number generator (PRNG), installed in the vehicle and the key fob, is used to periodically change the required code after a keypress, usually with a buffer to account for accidental out-of-range button presses. One-way RKEs are the simplest and most common form of keyless entry, and its security will be the focus of this report (van de Moosdijk & Visser, 2009, pp. 8-9).
+1. A one-way RKE requires a manual button press to perform an action. The vehicle receives the signal and confirms that it is a valid code, then performs the required action. With a rolling code system, a cryptographically secure pseudorandom number generator (PRNG), installed in the vehicle and the key fob, is used to periodically change the required code after a keypress, usually with a buffer to account for accidental out-of-range button presses. One-way RKEs are the simplest and most common form of keyless entry, and its security will be the focus of this report (van de Moosdijk & Visser, 2009, pp. 8-9).
 
-2. Two-way RKEs require a 'response' from the key fob given a certain 'challenge' from the vehicle (Alrabady & Mahmud, 2005, p. 2).
+2. Two-way RKEs require a 'response' from the key fob given a certain 'challenge' from the vehicle (Alrabady & Mahmud, 2005, p. 2).
 
-3. Passive RKEs (abbr. PKEs) automatically unlock within a certain radius or upon the user touching a door handle; they are usually paired with a push-button ignition switch (van de Moosdijk & Visser, 2009, p. 9).
+3. Passive RKEs (abbr. PKEs) automatically unlock within a certain radius or upon the user touching a door handle; they are usually paired with a push-button ignition switch (van de Moosdijk & Visser, 2009, p. 9).
 
 ## Proof-of-concept device
 ### Quick Intro to RF Hardware & Software
@@ -47,7 +47,7 @@ Several new technologies have made RF security testing simpler and mor
 
 *Figure 2: RTL-SDR used to analyse signal (RTL-SDR.com, 2013)*
 
-A software-defined radio is a radio system where components traditionally implemented in hardware, such as filters and demodulators, are instead implemented in software (Dillinger, Madani, & Alonistioti, 2003). The setup typically involves an RF front end and an analogue-to-digital converter, connected to a computer via USB. The computer performs the complex tasks, such as demodulation, which refers to extracting the original signal from a carrier wave. Recently, it was found that a common USB TV tuner dongle, the RTL-SDR (refer Figure 2), could be made to send raw I/Q data to a computer (in-phase and quadrature, referring to the real and imaginary components of an RF signal) (Whyte, 2013). Hence, it became affordable for the average hobbyist to have a wide-band spectrum analyser. At the time of writing, such a dongle could be obtained for less than 10 USD (eBay Inc., 2017).
+A software-defined radio is a radio system where components traditionally implemented in hardware, such as filters and demodulators, are instead implemented in software (Dillinger, Madani, & Alonistioti, 2003). The setup typically involves an RF front end and an analogue-to-digital converter, connected to a computer via USB. The computer performs the complex tasks, such as demodulation, which refers to extracting the original signal from a carrier wave. Recently, it was found that a common USB TV tuner dongle, the RTL-SDR (refer Figure 2), could be made to send raw I/Q data to a computer (in-phase and quadrature, referring to the real and imaginary components of an RF signal) (Whyte, 2013). Hence, it became affordable for the average hobbyist to have a wide-band spectrum analyser. At the time of writing, such a dongle could be obtained for less than 10 USD (eBay Inc., 2017).
 
 In addition, advances in computing hardware and software have allowed for complex signal analysis using graphical flow graph software, such as GNURadio, capable of manipulating, decoding and encoding data for use with software defined radios (The GNU Radio Foundation, Inc., 2017). Another important development is the popular Raspberry Pi single board computer, which for 35 USD offers a full Linux operating system running on a 900Mhz quad-core processor, 4 USB ports, display outputs and 40 general purpose input-output (GPIO) pins, which provides an easy-to-use, affordable testing base for the experimental jam and replay attack outlined below (Raspberry Pi Foundation, 2015).
 
