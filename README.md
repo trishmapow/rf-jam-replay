@@ -21,6 +21,7 @@ FTDI (one-time use for programming)	|$5 (eBay)
 **Total**	|**$20**
 
 **Following is an extract of the paper written. It is aimed as a basic overview for those getting started in RF and does not go into much detail. If any RF experts spot errors, please let me know!**
+
 ## Background of Keyless Entry Systems
 
 A remote keyless entry system simply refers to any electronic lock that functions without the use of a mechanical key. Commonly, this comes in the form of a key fob, with buttons that communicate using radio frequency (RF) signals with a receiver to perform a certain action, such as locking or unlocking a vehicle.
