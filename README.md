@@ -20,7 +20,7 @@ Hook-up wire	|$3 (eBay)
 FTDI (one-time use for programming)	|$5 (eBay)
 **Total**	|**$20**
 
-**Following is an extract of the paper written.**
+**Following is an extract of the paper written. It is aimed as a basic overview for those getting started in RF and does not go into much detail. If any RF experts spot errors, please let me know!**
 ## Background of Keyless Entry Systems
 
 A remote keyless entry system simply refers to any electronic lock that functions without the use of a mechanical key. Commonly, this comes in the form of a key fob, with buttons that communicate using radio frequency (RF) signals with a receiver to perform a certain action, such as locking or unlocking a vehicle.
@@ -109,13 +109,10 @@ The basic techniques applied here can be applied to more complex two-way or pass
 
 A PKE system can be theoretically compromised by a jam and replay attack, however the algorithm for the “response” code given the “challenge” from the vehicle must be reverse-engineered. An even simpler ‘relay’ attack requires an attacker to stand near the vehicle and amplify the LF signals, then transmit this to another attacker who is within close range of the owner’s key fob. The valid response from the key fob can then be transmitted back to the first attacker to unlock the vehicle (Francillon, Danev, & Capkun, 2010).
 
-
-
-
-```# CC1101-FSK
+```
 **NOTE:** Not final code. Needs to be implemented for each model of vehicle.
 
-Attempt at RollJam, jam and replay keyless entry systems. Thank you to [Samy Kamkar](http://samy.pl/) who first provided me with the inspiration to perform software defined radio research, view his more polished RollJam device [here](https://www.wired.com/2015/08/hackers-tiny-device-unlocks-cars-opens-garages/). 
+Attempt at RollJam, jam and replay keyless entry systems. Thank you to [Samy Kamkar](http://samy.pl/) who first provided me with the inspiration to perform software defined radio research, view his more polished RollJam device [here](https://www.wired.com/2015/08/hackers-tiny-device-unlocks-cars-opens-garages/).
 
 Uses GNURadio to record IQ data from an RTL-SDR then decodes with a custom protocol made on wave-converter and parses the output to return the hex data.
 
