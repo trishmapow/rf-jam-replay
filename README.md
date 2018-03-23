@@ -29,7 +29,7 @@ A remote keyless entry system simply refers to any electronic lock th
 ### Types of Remote Keyless Entry
 Keyless entry systems can be categorised into three broad types, as seen below.
 
-![Imgur](https://i.imgur.com/gDRgPUB.png)
+![Keyless Entry Systems](img/rke.png)
 
 *Figure 1: One-way, two-way & passive RKE illustration*
 
@@ -43,7 +43,7 @@ Keyless entry systems can be categorised into three broad types, as see
 ### Quick Intro to RF Hardware & Software
 Several new technologies have made RF security testing simpler and more affordable for hobbyists and researchers, the most important development being the software-defined radio.
 
-![Imgur](https://i.imgur.com/yo4uTT8.png)
+![Software Defined Radio](img/sdr.png)
 
 *Figure 2: RTL-SDR used to analyse signal (RTL-SDR.com, 2013)*
 
@@ -54,7 +54,7 @@ In addition, advances in computing hardware and software have allowed for comple
 ### Overview of Jam and Replay Attack
 The attack that was carried out against the one-way RKE is a jam and replay attack. A high level overview and illustration of this attack is shown in Figure 3.
 
-![Imgur](https://i.imgur.com/GWWgEO1.png)
+![RKE Attack](img/rke_attack.png)
 
 *Figure 3: Jam and replay attack*
 
@@ -63,7 +63,7 @@ The attacker utilises a device with full-duplex RF capabilities (simultaneous tr
 ### Initial Reconnaissance
 The first step in reverse engineering the key fob was to determine its operating frequency. The key fob case was inspected, however there were no visible frequencies or radio IDs listed that offered clues to the operating frequency. Hence, the RTL-SDR was utilised. Common unlicensed frequencies in the International Telecommunication Union Region 3, containing Australia, were tuned to and the key fob repeatedly pressed until a signal became visible on the fast Fourier transform (FFT) plot, which displays a live view of the RF spectrum (refer Figure 4, top half). The horizontal axis represents frequency in megahertz and the vertical axis the amplitude in decibels relative to full scale (dBFS). A waterfall plot is shown in the bottom half, which plots the FFT over time, with the colours representing signal amplitude (blue to red, in increasing signal strength).
 
-![Imgur](https://i.imgur.com/8VNuPDT.png)
+![Initial Recon](img/initial_recon.png)
 
 *Figure 4: FFT plot of frequency versus signal strength showing key fob signal at 433.911MHz*
 
@@ -74,13 +74,13 @@ As seen in Figure 4, there are two peaks at 433.878MHz and 433.957MHz, with the 
 To further analyse the signal, a Debian setup was utilised, and the gqrx SDR receiver software used to record the key fob I/Q data. The data was passed to inspectrum, an open-source waveform analysis tool (Software in the Public Interest, Inc., 2017; Csete, 2016; Walters, 2017).
 A screenshot of the beginning of the signal is shown in Figure 5.
 
-![Imgur](https://i.imgur.com/Oof50yY.png)
+![Automated Decoding](img/automated_decoding.png)
 
 *Figure 5: Inspectrum signal analyser displaying preamble, sync-word and rolling code data*
 
 The vertical axis represents the frequency offset from the centre frequency (433.911MHz) in kHz, whilst the horizontal axis is time in seconds. As established, the signal visibly oscillates between two frequencies. The consistent, repetitive section of the signal on the left hand side of Figure 5 is the preamble, which is used to synchronise the clock of the receiver to correctly decode the transmitter’s packets. Following the preamble is a four-bit sync-word, which in this case is 1100110011001100, or 0xCCCC in hexadecimal. This sync-word is used to avoid clashes with other devices operating in that band. Following the sync-word is the actual rolling code signal, which is repeated twice, divided by a gap, seen in the far right of Figure 5. At first guess, the signal appears to be Manchester encoded, which means every bit (zero or one) is either encoded as high then low, or low then high, for the same period of time (refer Figure 6).
 
-![Imgur](https://i.imgur.com/Nu95WOp.png)
+![Signal Data](img/signal_data.png)
 
 *Figure 6: Manchester encoding illustration (Wikimedia Commons, 2004)*
 
@@ -101,7 +101,7 @@ The Python replay program was run simultaneously with rpitx, and resulted in the
 
 At this point, the program was ported to a Raspberry Pi single-board computer as it is more portable and affordable compared to a dedicated laptop. A power bank was used to power the Raspberry Pi, and a long-range Wi-Fi dongle allowed communication via secure shell (SSH) from the laptop for initial configuration. An image of the final Raspberry Pi jam and replay setup is shown in Figure 7.
 
-![Imgur](https://i.imgur.com/ZqvvR76.png)
+![Raspberry Pi Jam and Replay Setup](img/raspi_setup.png)
 
 *Figure 7: Photograph of final Raspberry Pi jam & replay setup showing connections to Wi-Fi, power and RF dongle*
 
@@ -110,8 +110,7 @@ The basic techniques applied here can be applied to more complex two-way or pass
 
 A PKE system can be theoretically compromised by a jam and replay attack, however the algorithm for the “response” code given the “challenge” from the vehicle must be reverse-engineered. An even simpler ‘relay’ attack requires an attacker to stand near the vehicle and amplify the LF signals, then transmit this to another attacker who is within close range of the owner’s key fob. The valid response from the key fob can then be transmitted back to the first attacker to unlock the vehicle (Francillon, Danev, & Capkun, 2010).
 
-```
-**NOTE:** Not final code. Needs to be implemented for each model of vehicle.
+`**NOTE:** Not final code. Needs to be implemented for each model of vehicle.`
 
 Attempt at RollJam, jam and replay keyless entry systems. Thank you to [Samy Kamkar](http://samy.pl/) who first provided me with the inspiration to perform software defined radio research, view his more polished RollJam device [here](https://www.wired.com/2015/08/hackers-tiny-device-unlocks-cars-opens-garages/).
 
@@ -132,7 +131,6 @@ Note that output is unfiltered and creates harmonics, probably illegal without l
 
 ## Screenshots
 **Inspectrum view of the I/Q taken from GNURadio**
-![Screenshot 1](https://github.com/trishmapow/CC1101-FSK/blob/master/Inspectrum_CORRECT2MHz_Initial.png "Inspectrum")
+![Screenshot 1](img/inspectrum.png "Inspectrum")
 **Wave Converter demod settings**
-![Screenshot 2](https://github.com/trishmapow/CC1101-FSK/blob/master/WaveConverterBeginningTransmissionDemod.png "Wave Converter")
-```
+![Screenshot 2](img/wave_converter.png "Wave Converter")
