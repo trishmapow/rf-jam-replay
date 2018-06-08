@@ -1,3 +1,6 @@
+[![HitCount](http://hits.dwyl.io/trishmapow2/rf-jam-replay.svg)](http://hits.dwyl.io/trishmapow2/rf-jam-replay)
+(from 8 Jun 2018)
+
 # Jam and Replay Attack on Vehicular Keyless Entry Systems
 #### Raspberry Pi version
 
