@@ -1,6 +1,15 @@
 [![HitCount](http://hits.dwyl.io/trishmapow2/rf-jam-replay.svg)](http://hits.dwyl.io/trishmapow2/rf-jam-replay)
 (from 8 Jun 2018)
 
+### Media
+[RyscCorp Students post](https://store.ryscc.com/blogs/rysc-students/christopher-queensland-academy-for-science-mathematics-and-technology)
+
+[RTL-SDR Blog post](https://www.rtl-sdr.com/explaining-and-demonstrating-jam-and-replay-attacks-on-keyless-entry-systems-with-rtl-sdr-rpitx-and-a-yardstick-one/)
+
+[Cafe Scientifique QUT 2017](https://qasmt.eq.edu.au/qut-cafe-scientifique-2017/)
+
+[Short unnarrated video of capture](https://www.youtube.com/watch?v=VFLYEQ_u7Mc)
+
 # Jam and Replay Attack on Vehicular Keyless Entry Systems
 #### Raspberry Pi version
 
