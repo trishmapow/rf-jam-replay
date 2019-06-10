@@ -1,6 +1,3 @@
-[![HitCount](http://hits.dwyl.io/trishmapow2/rf-jam-replay.svg)](http://hits.dwyl.io/trishmapow2/rf-jam-replay)
-(from 8 Jun 2018)
-
 ### Media
 [RyscCorp Students post](https://store.ryscc.com/blogs/rysc-students/christopher-queensland-academy-for-science-mathematics-and-technology)
 
